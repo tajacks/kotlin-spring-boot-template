@@ -24,8 +24,6 @@ COPY src/ src/
 # Build the application
 RUN ./mvnw clean package -DskipTests
 
-RUN ls -lah /build
-
 # Use a minimal runtime image
 FROM amazoncorretto:21
 
