@@ -1,0 +1,3 @@
+[submodule "maven-parent"]
+	path = maven-parent
+	url = git@github.com:tajacks/kotlin-spring-boot-parent.git
