@@ -9,7 +9,7 @@ It is also a convenient starter for weekend projects and the like.
 The parent POM repository where the versions are defined can be found 
 [here](https://github.com/tajacks/kotlin-spring-boot-parent).
 
-Remember that after cloning this repository locally, the git submodule must be initialized.
+After cloning this repository locally, the git submodule must be initialized.
 
 ```
 git submodule update --init
