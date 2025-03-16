@@ -1,0 +1,21 @@
+{
+  "sinks": {
+    "stdout": {
+      "renderWith": "RENDER_ANSI",
+      "renderPattern": "%t{LOCAL_TIME} %-5v{COLOUR} [%-10c] - %30l - %m %i%s",
+      "sendTo": "STDOUT"
+    }
+  },
+  "logging": [
+    {
+      "levelRanges": [
+        {
+          "fromMinLevel": "INFO",
+          "toSinks": [
+            "stdout"
+          ]
+        }
+      ]
+    }
+  ]
+}

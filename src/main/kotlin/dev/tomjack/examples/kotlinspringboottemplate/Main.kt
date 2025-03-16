@@ -9,13 +9,13 @@ import java.util.concurrent.CountDownLatch
 
 @SpringBootApplication
 class Main {
-
     @Bean
     @Profile("!test")
-    fun commandLineRunner(): CommandLineRunner = CommandLineRunner {
-        println("Hello, world!")
-        CountDownLatch(1).await()
-    }
+    fun commandLineRunner(): CommandLineRunner =
+        CommandLineRunner {
+            println("Hello, world!")
+            CountDownLatch(1).await()
+        }
 }
 
 fun main(args: Array<String>) {
