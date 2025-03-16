@@ -9,12 +9,6 @@ import java.util.concurrent.CountDownLatch
 
 @SpringBootApplication
 class Main {
-
-
-
-
-
-
     @Bean
     @Profile("!test")
     fun commandLineRunner(): CommandLineRunner =
