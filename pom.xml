@@ -42,6 +42,13 @@
             <artifactId>kotlinx-coroutines-core</artifactId>
         </dependency>
 
+        <!-- Logging -->
+        <dependency>
+            <groupId>io.klogging</groupId>
+            <artifactId>klogging-spring-boot-starter</artifactId>
+            <type>pom</type>
+        </dependency>
+
         <!-- Test Dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
