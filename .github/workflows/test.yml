@@ -1,0 +1,47 @@
+name: Maven Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Maven Tests
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'corretto'
+          cache: maven
+
+      - name: Run Tests
+        run: mvn -B test
+
+      - name: Publish Test Results
+        if: always() # Run even if tests fail
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          files: "**/target/surefire-reports/TEST-*.xml"
+
+      - name: Check Test Failures
+        if: ${{ failure() }}
+        run: |
+          echo "::error::Maven tests failed. Please fix the tests before merging."
+          exit 1

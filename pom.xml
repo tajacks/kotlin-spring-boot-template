@@ -6,7 +6,7 @@
     <parent>
         <groupId>dev.tomjack</groupId>
         <artifactId>kotlin-springboot-parent</artifactId>
-        <version>0.2.0</version>
+        <version>0.3.0</version>
         <relativePath>maven-parent/pom.xml</relativePath>
     </parent>
 
@@ -20,6 +20,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Kotlin Dependencies -->
@@ -34,6 +40,13 @@
         <dependency>
             <groupId>org.jetbrains.kotlinx</groupId>
             <artifactId>kotlinx-coroutines-core</artifactId>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>io.klogging</groupId>
+            <artifactId>klogging-spring-boot-starter</artifactId>
+            <type>pom</type>
         </dependency>
 
         <!-- Test Dependencies -->
